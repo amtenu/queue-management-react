@@ -62,8 +62,8 @@ A signaling mechanism that allows workers to:
 ## Installation & Running Locally
 
 ```bash
-git clone https://github.com/your-username/nexus-qms.git
-cd nexus-qms
+git clone https://github.com/your repo/queue-management-react.git
+cd queue-management-react
 npm install
 npm run dev
 ```
