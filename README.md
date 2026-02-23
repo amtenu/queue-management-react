@@ -1,31 +1,75 @@
-Nexus QMS
-Overview
-A React-based micro-service for real-time task lifecycle tracking and operational bottleneck identification.
+# Nexus QMS
 
-Tech Stack
-Core: React 18 / Vite
+## Overview
+Nexus QMS is a React-based microservice for real-time task lifecycle tracking and operational bottleneck identification.
 
-Styling: Tailwind CSS v4
+It enables structured task state transitions, live duration tracking, and workflow escalation for blocked processes.
 
-Logic: React Hooks (useState, useEffect)
+---
 
-Functional Specifications
-State Machine: Managed transitions between Pending, Processing, and Completed statuses.
+## Tech Stack
 
-Live Duration: Precision tracking using Date.now() with automated setInterval cleanup.
+- React 18 + Vite
+- Tailwind CSS v4
+- React Hooks (`useState`, `useEffect`)
 
-Stuck Protocol: A signaling mechanism allowing workers to flag tasks requiring supervisor intervention.
+---
 
-Architecture: Unidirectional data flow with state lifted to the parent container for modularity.
+## Functional Specifications
 
-Implementation Status
+### State Machine
+Managed transitions between:
+- Pending
+- Processing
+- Completed
 
-[x] Responsive 3-column layout
+Ensures predictable and controlled task lifecycle flow.
 
-[x] Dynamic task intake and priority assignment
+### Live Duration Tracking
+- Precision timing using `Date.now()`
+- Automated cleanup via `setInterval`
+- Real-time duration visibility per task
 
-[x] Live duration timers
+### Stuck Protocol
+A signaling mechanism that allows workers to:
+- Flag blocked tasks
+- Request supervisor intervention
+- Improve operational transparency
 
-[ ] In Progress: Boolean "Stuck" state flagging
+### Architecture
+- Unidirectional data flow
+- State lifted to the parent container
+- Modular and maintainable component structure
 
-[ ] Planned: LocalStorage persistence & Archive analytics
+---
+
+## Implementation Status
+
+### Completed
+- [x] Responsive 3-column layout
+- [x] Dynamic task intake and priority assignment
+- [x] Live duration timers
+
+### In Progress
+- [ ] Boolean "Stuck" state flagging
+
+### Planned
+- [ ] LocalStorage persistence
+- [ ] Archive analytics
+
+---
+
+## Installation & Running Locally
+
+```bash
+git clone https://github.com/your-username/nexus-qms.git
+cd nexus-qms
+npm install
+npm run dev
+```
+
+The app runs at:
+
+```
+http://localhost:5173
+```
