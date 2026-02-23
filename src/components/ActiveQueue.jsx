@@ -1,3 +1,4 @@
+import Timer from "./Timer";
 export default function ActiveQueue({ tasks, onStart, onComplete, onDelete }) {
   return (
     <div className="bg-white p-6 rounded-xl shadow-md border border-gray-200">
@@ -50,12 +51,21 @@ export default function ActiveQueue({ tasks, onStart, onComplete, onDelete }) {
                   Start Process
                 </button>
               ) : (
-                <button
-                  onClick={() => onComplete(task.id)}
-                  className="w-full bg-green-600 text-white text-sm py-2 rounded font-semibold hover:bg-green-700 animate-pulse"
-                >
-                  Finish Task
-                </button>
+                <div className="space-y-3">
+                  <div className="flex flex-col items-center pb-2">
+                    <span className="text-[10px] text-gray-400 uppercase font-bold tracking-widest mb-1">
+                      Live Duration
+                    </span>
+                    <Timer startTime={task.startedAt} />
+                  </div>
+
+                  <button
+                    onClick={() => onComplete(task.id)}
+                    className="w-full bg-green-600 text-white text-sm py-2 rounded font-semibold hover:bg-green-700 animate-pulse"
+                  >
+                    Finish Task
+                  </button>
+                </div>
               )}
             </div>
           </div>

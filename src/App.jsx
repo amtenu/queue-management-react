@@ -24,7 +24,7 @@ export default function App() {
           ? {
               ...task,
               status: "processing",
-              startedAt: new Date().toLocaleTimeString(),
+              startedAt: Date.now(), // We need time to be counted since start
             }
           : task,
       ),
