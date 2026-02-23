@@ -16,7 +16,7 @@ export default function TaskIntake({ onAdd }) {
 
   return (
     <div className="bg-white p-6 rounded-xl shadow-md border border-gray-200">
-      <h2 className="text-xl font-bold mb-4 text-gray-800">1. Entry Form</h2>
+      <h2 className="text-xl font-bold mb-4 text-gray-800">Entry Form</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
           type="text"
