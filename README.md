@@ -1,16 +1,31 @@
-# React + Vite
+Nexus QMS
+Overview
+A React-based micro-service for real-time task lifecycle tracking and operational bottleneck identification.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Tech Stack
+Core: React 18 / Vite
 
-Currently, two official plugins are available:
+Styling: Tailwind CSS v4
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Logic: React Hooks (useState, useEffect)
 
-## React Compiler
+Functional Specifications
+State Machine: Managed transitions between Pending, Processing, and Completed statuses.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Live Duration: Precision tracking using Date.now() with automated setInterval cleanup.
 
-## Expanding the ESLint configuration
+Stuck Protocol: A signaling mechanism allowing workers to flag tasks requiring supervisor intervention.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Architecture: Unidirectional data flow with state lifted to the parent container for modularity.
+
+Implementation Status
+
+[x] Responsive 3-column layout
+
+[x] Dynamic task intake and priority assignment
+
+[x] Live duration timers
+
+[ ] In Progress: Boolean "Stuck" state flagging
+
+[ ] Planned: LocalStorage persistence & Archive analytics
